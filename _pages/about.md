@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: default
 title: "left for posterity"
 description : "this is meta description"
 ---
