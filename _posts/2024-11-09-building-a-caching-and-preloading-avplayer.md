@@ -582,7 +582,7 @@ extension CachingPlayerItem: URLSessionDataDelegate {
 
 #### Notes on AVAssetResourceLoaderDelegate
 
-Return true if you can handle the request and of course false when you can't
+Return true if you can handle the request and of course false when you can't.
 
 Check if the request is for content information or data. Content information is metadata about the media file like content type, length etc. Data is the actual media data. Never call `request.finishLoading()` on a content request, it will stall the player without a way of resuming. The content request is usually 2 bytes.
 
@@ -590,7 +590,7 @@ URLSessionDataDelegate didRecieve response will be called and we need to cache t
 URLResponse is not codable and therefore we created a struct to store the information we need and cache it.
 
 There is a lot of calculations on bytes received, bytes requested and bytes cached to determine if we can serve the request from cache. This is because the player requests data in chunks and we need to make sure we have the data to serve the request.
-The first data request is usually the full length of the video and we have it in cache we can return the whole of it.
+The first data request is usually the full length of the video and we have it in cache we can return the whole of it,
 if not we return the data we have and the player will request the rest of the data in chunks.
 
 When the requests in chunks are made, we return those chunks and cache them to the disk. This ensures that the player can play the video without any interruptions and we are caching the data as it is being played.
@@ -677,13 +677,6 @@ public actor Preloader: Sendable {
 }
 ```
 
-#### Disclaimer
-
-This method will cache the entire video to disk. This is not ideal for large videos as it will consume a lot of disk space. You can modify the code to cache only a certain amount of data and delete the rest. This will require you to keep track of the data you have cached and delete the rest. This is left as an exercise for the reader.
-
-This will also not work with HTTP Live Streaming (HLS) videos as they are segmented and the player requests the segments in chunks. You will have to modify the code to handle this. Again an exercise for the reader.
-I will also try and implement this in the future to have an all in one solution to all video types.
-
 #### Back to AudioVisualService
 
 we can now have a full example of how to use the caching player item and the preloader.
@@ -765,4 +758,16 @@ public final class AudioVisualService: Sendable {
 }
 ```
 
+#### Disclaimer
+
+This method will cache the entire video to disk. This is not ideal for large videos as it will consume a lot of disk space. You can modify the code to cache only a certain amount of data and delete the rest. This will require you to keep track of the data you have cached and delete the rest. This is left as an exercise for the reader.
+
+This will also not work with HTTP Live Streaming (HLS) videos as they are segmented and the player requests the segments in chunks. You will have to modify the code to handle this. Again an exercise for the reader.
+I will also try and implement this in the future to have an all in one solution to all video types.
+
 #### Ends
+
+Find the full code in the [GitHub repo](https://github.com/iankoex/CachingPlayerItem.git).
+I hope this helps you in your video streaming applications.
+I will be updating the repo with more features and improvements.
+Feel free to contribute and make it better.
