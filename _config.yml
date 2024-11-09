@@ -1,8 +1,8 @@
 baseurl: "" # the subpath of your site, e.g. blog/
-url: "https://iankoex.com" # the base hostname & protocol for your site, e.g. http://example.com/
+url: "https://blog.iankoex.com" # the base hostname & protocol for your site, e.g. http://example.com/
 
 title: Exit Code Zero | iankoex
-description: Iankoex is a leading provider of comprehensive and tailor made apps, websites and security services for commercial clients.
+description: Exit Code Zero is all about the pursuit of the elusive exit code 0. Here, I’ll share insights from my projects, the challenges I face, and the solutions I discover along the way.
 
 # Scss Directory
 sass:
