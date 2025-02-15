@@ -3,7 +3,7 @@ title:  "Welcome to Exit Code Zero!"
 image : "/assets/images/logo.png"
 author: "iankoex"
 date: 2024-10-20 11:12:58 +0600
-description : "This is meta description"
+description : "Exit Code Zero is all about the pursuit of the elusive exit code 0"
 tags: [meta]
 ---
 Exit Code Zero is all about the pursuit of the elusive exit code 0.

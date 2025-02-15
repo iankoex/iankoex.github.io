@@ -17,6 +17,8 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll/tagging
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 paginate: 100
 paginate_path: "/page/:num"
@@ -56,3 +58,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+author:
+  twitter: iankoex

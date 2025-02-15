@@ -1,7 +1,7 @@
 ---
 title : "iankoex"
 image : "/assets/images/author/iankoex.png"
-description : "Front end developer"
+description : "Developer"
 ---
 
 I'm Iankoex, I love building stuff.
