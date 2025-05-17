@@ -18,7 +18,6 @@ plugins:
   - jekyll-sitemap
   - jekyll/tagging
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 paginate: 100
 paginate_path: "/page/:num"
