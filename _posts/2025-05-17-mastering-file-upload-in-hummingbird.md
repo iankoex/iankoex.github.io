@@ -20,31 +20,30 @@ Understanding the structure of multipart form data is crucial for developers wor
 1. **Content-Type Header**:
    The request begins with a `Content-Type` header that specifies the type of data being sent. For multipart form data, this header typically looks like this:
 
-   ```
-   Content-Type: multipart/form-data; boundary=---BoundaryString
-   ```
+    ```
+    Content-Type: multipart/form-data; boundary=---BoundaryString
+    ```
 
-   The `boundary` parameter is a unique string that acts as a delimiter between different parts of the form data.
+    The `boundary` parameter is a unique string that acts as a delimiter between different parts of the form data.
 
 2. **Boundary**:
    The boundary string separates each part of the multipart data. It is defined in the `Content-Type` header and indicates where one part ends and another begins. Each part starts with the boundary string, prefixed by two hyphens (`--`), and ends with the boundary string followed by two hyphens to signify the end of the multipart data.
 
 3. **Parts**:
    Each part of the multipart form data consists of several components:
-
-   - **Headers**: Each part can have its own set of headers that provide metadata about the data being sent. Common headers include:
-     - `Content-Disposition`: Specifies how the data should be handled, including the name of the form field and, if applicable, the filename for file uploads. For example:
-       ```
-       Content-Disposition: form-data; name="file"; filename="example.jpg"
-       ```
-     - `Content-Type`: Indicates the media type of the data being sent (e.g., `image/jpeg` for JPEG images).
-   - **Body**: Following the headers, the actual data (the body) of the part is included. This can be text, binary data, or any other type of content.
+    - **Headers**: Each part can have its own set of headers that provide metadata about the data being sent. Common headers include:
+        - `Content-Disposition`: Specifies how the data should be handled, including the name of the form field and, if applicable, the filename for file uploads. For example:
+            ```
+            Content-Disposition: form-data; name="file"; filename="example.jpg"
+            ```
+        - `Content-Type`: Indicates the media type of the data being sent (e.g., `image/jpeg` for JPEG images).
+    - **Body**: Following the headers, the actual data (the body) of the part is included. This can be text, binary data, or any other type of content.
 
 4. **Final Boundary**:
    The multipart data concludes with a final boundary that indicates the end of the data. This boundary is marked by the same boundary string used to separate the parts, followed by two hyphens:
-   ```
-   -----BoundaryString--
-   ```
+    ```
+    -----BoundaryString--
+    ```
 
 ## Example Structure
 
@@ -140,24 +139,22 @@ Here’s a simple example of what each template might look like:
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HTMLForm</title>
-    <meta charset="UTF-8" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100">
-    <div class="text-center">
-      <h2 class="text-3xl p-3">Multipart Form</h2>
-    </div>
-    <div
-      class="p-6 max-w-md mx-auto bg-white rounded-xl items-centered space-x-4 shadow-lg"
-    >
-      <div>
-        <img src="images/hummingbird.png" class="w-64 mx-auto" />
-      </div>
-      {{$body}} {{/body}}
-    </div>
-  </body>
+    <head>
+        <title>HTMLForm</title>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100">
+        <div class="text-center">
+            <h2 class="text-3xl p-3">Multipart Form</h2>
+        </div>
+        <div class="p-6 max-w-md mx-auto bg-white rounded-xl items-centered space-x-4 shadow-lg">
+            <div>
+                <img src="images/hummingbird.png" class="w-64 mx-auto" />
+            </div>
+            <!-- Form body content -->
+        </div>
+    </body>
 </html>
 ```
 
@@ -166,11 +163,11 @@ Here’s a simple example of what each template might look like:
 ```html
 <h1 class="text-xl">Please enter your details</h1>
 <form action="/" method="post" enctype="multipart/form-data">
-  <label for="name">Name</label><br />
-  <input type="text" id="name" name="name" class="border" /><br />
-  <label for="age">Age</label><br />
-  <input type="text" id="age" name="age" class="border" /><br />
-  <input type="submit" value="Submit" class="p-1 my-2 border shadow-lg" />
+    <label for="name">Name</label><br />
+    <input type="text" id="name" name="name" class="border" /><br />
+    <label for="age">Age</label><br />
+    <input type="text" id="age" name="age" class="border" /><br />
+    <input type="submit" value="Submit" class="p-1 my-2 border shadow-lg" />
 </form>
 ```
 
@@ -179,8 +176,8 @@ Here’s a simple example of what each template might look like:
 ```html
 <h1 class="text-xl">You entered</h1>
 <ul>
-  <li>Name: {{name}}</li>
-  <li>Age: {{age}}</li>
+    <li>Name: {{name}}</li>
+    <li>Age: {{age}}</li>
 </ul>
 ```
 

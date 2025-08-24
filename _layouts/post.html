@@ -9,23 +9,31 @@ layout: default
                 <h2>{{ page.title }}</h2>
                 <div class="mb-3 post-meta">
                     {% if page.author %}
-                    <a
-                        href="{{ 'author/' | relative_url }}{{ page.author | slugify }}"
+                    <a href="{{ 'author/' | relative_url }}{{ page.author | slugify }}"
                         >{{ page.author | capitalize }}</a
-                    >{%endif%}, {{ page.date | date: '%b %d, %Y' }}, {% if
-                    page.tags.size >= 1 %} {% for tag in page.tags %}
-                    <a href="{{ '/tag/' | relative_url }}{{ tag | slugify }}"
-                        >{{ tag | capitalize }}</a
-                    >
+                    >{%endif%}, {{ page.date | date: '%b %d, %Y' }}, {% if page.tags.size >= 1 %} {% for tag in
+                    page.tags %}
+                    <a href="{{ '/tag/' | relative_url }}{{ tag | slugify }}">{{ tag | capitalize }}</a>
                     {% endfor %} {% endif %}
                 </div>
                 {% if page.image %}
-                <img
-                    src="{{ page.image | relative_url }}"
-                    class="img-fluid w-100 mb-4"
-                    alt="{{ page.title }}"
-                />
+                <img src="{{ page.image | relative_url }}" class="img-fluid w-100 mb-4" alt="{{ page.title }}" />
                 {% endif %}
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "headline": "{{ page.title }}",
+                        "author": {
+                            "@type": "Person",
+                            "name": "{{ page.author | default: site.author }}"
+                        },
+                        "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+                        "image": "{{ page.image | absolute_url }}",
+                        "url": "{{ page.url | absolute_url }}",
+                        "description": "{{ page.excerpt | strip_html | truncate: 160 }}"
+                    }
+                </script>
                 <div class="content mb-5">{{ page.content }}</div>
             </div>
         </div>
