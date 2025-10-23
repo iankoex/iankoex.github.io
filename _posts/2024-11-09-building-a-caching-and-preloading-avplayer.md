@@ -7,6 +7,12 @@ description: "In this article I will show how I built a caching and preloading A
 tags: [Swift, SwiftUI]
 ---
 
+<blockquote>
+    <p>I have made edits to the code originally described here.</p>
+    <p>The repository has also been renamed.</p>
+</blockquote>
+Link the repository [here](https://github.com/iankoex/AudioVisualService), and the new blog post [here](https://blog.iankoex.com/post/improving-caching-and-preloading-avplayer.html).
+
 I will be building a caching and preloading AVPlayer in Swift. This is a very common use case for many apps that need to play video content. The AVPlayer is a powerful tool that allows you to play video content in your app. However, it does not come with built-in support for caching and preloading.
 
 Like most developers, I went online searching for a solution, but I couldn't find any that wasn't too complicated or didn't descend down to UIKit and AppKit.
@@ -767,7 +773,7 @@ I will also try and implement this in the future to have an all in one solution 
 
 #### Ends
 
-Find the full code in the [GitHub repo](https://github.com/iankoex/CachingPlayerItem.git).
+Find the full code in the [GitHub repo](https://github.com/iankoex/AudioVisualService).
 I hope this helps you in your video streaming applications.
 I will be updating the repo with more features and improvements.
 Feel free to contribute and make it better.
