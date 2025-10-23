@@ -12,11 +12,9 @@ VERSION:	Versoin Number
 [TABLE OF CONTENTS]
 -------------------------------------------------------------------*/
 
-@import "variables";
-@import "mixins";
-@import "typography";
-@import "buttons";
-@import "common";
-@import "templates/navigation";
-@import "templates/main";
+@use "typography";
+@use "buttons";
+@use "common";
+@use "templates/navigation";
+@use "templates/main";
 @import "github.css";
