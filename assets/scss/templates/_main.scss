@@ -91,6 +91,10 @@
             border: 1px solid #dee2e6;
         }
 
+        td:first-child {
+            white-space: nowrap;
+        }
+
         thead {
             background: color.adjust($light, $lightness: -2%);
         }
